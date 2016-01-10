@@ -6,7 +6,7 @@
 [![codacy](https://img.shields.io/codacy/2850488ca36c476ab5ada9c155741202.svg)](https://www.codacy.com/app/meanie/angular-analytics)
 [![Join the chat at https://gitter.im/meanie/meanie](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg)](https://gitter.im/meanie/meanie?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-An Angular wrapper service for Google Analytics.
+An Angular wrapper service for Google Analytics
 
 ## Installation
 
@@ -15,20 +15,16 @@ You can install this package using `npm` or `bower`.
 ### npm
 
 ```shell
-npm install meanie-angular-analytics
+npm install meanie-angular-analytics --save
 ```
 
-Include the script `node_modules/meanie-angular-analytics/release/meanie-angular-analytics.js` in your build process, or add via a `<script>` tag to your `index.html`:
+Include the script `node_modules/meanie-angular-analytics/release/meanie-angular-analytics.js` in your build process, or add it via a `<script>` tag to your `index.html`:
 
 ```html
 <script src="node_modules/meanie-angular-analytics/release/meanie-angular-analytics.js"></script>
 ```
 
-Then add `Analytics.Service` as a dependency for your app:
-
-```js
-angular.module('App.MyModule', ['Analytics.Service']);
-```
+Add `Analytics.Service` as a dependency for your app.
 
 ### bower
 
@@ -36,32 +32,22 @@ angular.module('App.MyModule', ['Analytics.Service']);
 bower install meanie-angular-analytics
 ```
 
-Include the script `bower_components/meanie-angular-analytics/release/meanie-angular-analytics.js` in your build process, or add via a `<script>` tag to your `index.html`:
+Include the script `bower_components/meanie-angular-analytics/release/meanie-angular-analytics.js` in your build process, or add it via a `<script>` tag to your `index.html`:
 
 ```html
 <script src="bower_components/meanie-angular-analytics/release/meanie-angular-analytics.js"></script>
 ```
 
-Then add `Analytics.Service` as a dependency for your app:
-
-```js
-angular.module('App.MyModule', ['Analytics.Service']);
-```
+Add `Analytics.Service` as a dependency for your app.
 
 ## Usage
 ```js
-angular.module('App.MyModule')
-
-/**
- * Configuration
- */
+angular.module('App', [
+  'Analytics.Service'
+])
 .config(function($analyticsProvider, Config) {
   $analyticsProvider.setEnabled(Config.ANALYTICS_ENABLED && Config.ANALYTICS_TRACKING_ID);
 })
-
-/**
- * Run logic
- */
 .run(function($rootScope, $analytics, Config) {
 
   //Check if enabled
