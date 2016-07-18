@@ -1,4 +1,4 @@
-# angular-analytics
+# meanie-angular-analytics
 
 [![npm version](https://img.shields.io/npm/v/meanie-angular-analytics.svg)](https://www.npmjs.com/package/meanie-angular-analytics)
 [![node dependencies](https://david-dm.org/meanie/angular-analytics.svg)](https://david-dm.org/meanie/angular-analytics)
@@ -12,9 +12,7 @@ An Angular wrapper service for Google Analytics
 
 ## Installation
 
-You can install this package using `npm` or `bower`.
-
-### npm
+You can install this package using `npm`:
 
 ```shell
 npm install meanie-angular-analytics --save
@@ -24,20 +22,6 @@ Include the script `node_modules/meanie-angular-analytics/release/meanie-angular
 
 ```html
 <script src="node_modules/meanie-angular-analytics/release/meanie-angular-analytics.js"></script>
-```
-
-Add `Analytics.Service` as a dependency for your app.
-
-### bower
-
-```shell
-bower install meanie-angular-analytics
-```
-
-Include the script `bower_components/meanie-angular-analytics/release/meanie-angular-analytics.js` in your build process, or add it via a `<script>` tag to your `index.html`:
-
-```html
-<script src="bower_components/meanie-angular-analytics/release/meanie-angular-analytics.js"></script>
 ```
 
 Add `Analytics.Service` as a dependency for your app.
