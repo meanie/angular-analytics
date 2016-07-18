@@ -1,5 +1,5 @@
 /**
- * meanie-angular-analytics - v1.1.3 - 18-6-2016
+ * meanie-angular-analytics - v1.1.4 - 18-6-2016
  * https://github.com/meanie/angular-analytics
  *
  * Copyright (c) 2016 Adam Buczynski <me@adambuczynski.com>
