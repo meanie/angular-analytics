@@ -44,7 +44,7 @@
       $window.ga = $window.ga || function () {
         ($window.ga.q = $window.ga.q || []).push(arguments);
       };
-      $window.ga.l = +new Date();
+      $window.ga.l = Number(new Date());
 
       /**
        * GA wrapper function
@@ -63,9 +63,11 @@
         /**
          * Enable analytics in realtime
          */
+
         enable: function enable() {
           _isEnabled = true;
         },
+
 
         /**
          * Disable analytics in realtime
@@ -74,12 +76,14 @@
           _isEnabled = false;
         },
 
+
         /**
          * Check if enabled
          */
         isEnabled: function isEnabled() {
           return _isEnabled;
         },
+
 
         /**
          * Create interface
@@ -92,6 +96,7 @@
           }, config || {}));
         },
 
+
         /**
          * Set interface
          */
@@ -100,9 +105,11 @@
           /**
            * Set app name
            */
+
           appName: function appName(name) {
             ga('set', 'appName', name);
           },
+
 
           /**
            * Set app ID
@@ -111,12 +118,14 @@
             ga('set', 'appId', id);
           },
 
+
           /**
            * Set app version
            */
           appVersion: function appVersion(version) {
             ga('set', 'appVersion', version);
           },
+
 
           /**
            * Set user ID
@@ -125,12 +134,14 @@
             ga('set', 'userId', _userId);
           },
 
+
           /**
            * Set data source
            */
           dataSource: function dataSource(_dataSource) {
             ga('set', 'dataSource', _dataSource);
           },
+
 
           /**
            * Set screen name
@@ -139,12 +150,14 @@
             ga('set', 'screenName', _screenName);
           },
 
+
           /**
            * Set document title
            */
           documentTitle: function documentTitle(title) {
             ga('set', 'title', title);
           },
+
 
           /**
            * Set hostname
@@ -153,12 +166,15 @@
             ga('set', 'hostname', _hostname);
           },
 
+
           /**
            * Set page
            */
           page: function page(_page) {
+            _page = _page || $location.url();
             ga('set', 'page', _page);
           },
+
 
           /**
            * Campaign name
@@ -167,12 +183,14 @@
             ga('set', 'campaignName', name);
           },
 
+
           /**
            * Campaign ID
            */
           campaignId: function campaignId(id) {
             ga('set', 'campaignId', id);
           },
+
 
           /**
            * Campaign source
@@ -181,12 +199,14 @@
             ga('set', 'campaignSource', source);
           },
 
+
           /**
            * Campaign medium
            */
           campaignMedium: function campaignMedium(medium) {
             ga('set', 'campaignMedium', medium);
           },
+
 
           /**
            * Campaign keyword
@@ -195,12 +215,14 @@
             ga('set', 'campaignKeyword', keyword);
           },
 
+
           /**
            * Campaign content
            */
           campaignContent: function campaignContent(content) {
             ga('set', 'campaignContent', content);
           },
+
 
           /**
            * Set user language
@@ -209,12 +231,14 @@
             ga('set', 'language', _language);
           },
 
+
           /**
            * Set document encoding
            */
           encoding: function encoding(_encoding) {
             ga('set', 'encoding', _encoding);
           },
+
 
           /**
            * Anonymize sender's IP address
@@ -232,12 +256,14 @@
           /**
            * Register a pageview
            */
+
           pageview: function pageview(page) {
             ga('send', {
               hitType: 'pageview',
               page: page || $location.url()
             });
           },
+
 
           /**
            * Register a screenview
@@ -248,6 +274,7 @@
               screenName: screenName
             });
           },
+
 
           /**
            * Register an event
@@ -262,6 +289,7 @@
             });
           },
 
+
           /**
            * Register a social hit
            */
@@ -274,6 +302,7 @@
             });
           },
 
+
           /**
            * Register an exception
            */
@@ -284,6 +313,7 @@
               exFatal: !!isFatal
             });
           },
+
 
           /**
            * Register a timing hit
