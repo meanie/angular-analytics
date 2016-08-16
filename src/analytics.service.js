@@ -27,7 +27,7 @@ angular.module('Analytics.Service', [])
   this.$get = function($window, $location) {
 
     //Check if enabled
-    var isEnabled = this.isEnabled;
+    let isEnabled = this.isEnabled;
 
     /**
      * Initialize google analytics queue
@@ -35,7 +35,7 @@ angular.module('Analytics.Service', [])
     $window.ga = $window.ga || function() {
       ($window.ga.q = $window.ga.q || []).push(arguments);
     };
-    $window.ga.l = +new Date();
+    $window.ga.l = Number(new Date());
 
     /**
      * GA wrapper function
@@ -49,37 +49,37 @@ angular.module('Analytics.Service', [])
     /**
      * Class definition
      */
-    var Analytics = {
+    let Analytics = {
 
       /**
        * Enable analytics in realtime
        */
-      enable: function() {
+      enable() {
         isEnabled = true;
       },
 
       /**
        * Disable analytics in realtime
        */
-      disable: function() {
+      disable() {
         isEnabled = false;
       },
 
       /**
        * Check if enabled
        */
-      isEnabled: function() {
+      isEnabled() {
         return isEnabled;
       },
 
       /**
        * Create interface
        */
-      create: function(trackingId, name, config) {
+      create(trackingId, name, config) {
         ga('create', angular.extend({
           trackingId: trackingId,
           cookieDomain: 'auto',
-          name: name
+          name: name,
         }, config || {}));
       },
 
@@ -91,128 +91,129 @@ angular.module('Analytics.Service', [])
         /**
          * Set app name
          */
-        appName: function(name) {
+        appName(name) {
           ga('set', 'appName', name);
         },
 
         /**
          * Set app ID
          */
-        appId: function(id) {
+        appId(id) {
           ga('set', 'appId', id);
         },
 
         /**
          * Set app version
          */
-        appVersion: function(version) {
+        appVersion(version) {
           ga('set', 'appVersion', version);
         },
 
         /**
          * Set user ID
          */
-        userId: function(userId) {
+        userId(userId) {
           ga('set', 'userId', userId);
         },
 
         /**
          * Set data source
          */
-        dataSource: function(dataSource) {
+        dataSource(dataSource) {
           ga('set', 'dataSource', dataSource);
         },
 
         /**
          * Set screen name
          */
-        screenName: function(screenName) {
+        screenName(screenName) {
           ga('set', 'screenName', screenName);
         },
 
         /**
          * Set document title
          */
-        documentTitle: function(title) {
+        documentTitle(title) {
           ga('set', 'title', title);
         },
 
         /**
          * Set hostname
          */
-        hostname: function(hostname) {
+        hostname(hostname) {
           ga('set', 'hostname', hostname);
         },
 
         /**
          * Set page
          */
-        page: function(page) {
+        page(page) {
+          page = page || $location.url();
           ga('set', 'page', page);
         },
 
         /**
          * Campaign name
          */
-        campaignName: function(name) {
+        campaignName(name) {
           ga('set', 'campaignName', name);
         },
 
         /**
          * Campaign ID
          */
-        campaignId: function(id) {
+        campaignId(id) {
           ga('set', 'campaignId', id);
         },
 
         /**
          * Campaign source
          */
-        campaignSource: function(source) {
+        campaignSource(source) {
           ga('set', 'campaignSource', source);
         },
 
         /**
          * Campaign medium
          */
-        campaignMedium: function(medium) {
+        campaignMedium(medium) {
           ga('set', 'campaignMedium', medium);
         },
 
         /**
          * Campaign keyword
          */
-        campaignKeyword: function(keyword) {
+        campaignKeyword(keyword) {
           ga('set', 'campaignKeyword', keyword);
         },
 
         /**
          * Campaign content
          */
-        campaignContent: function(content) {
+        campaignContent(content) {
           ga('set', 'campaignContent', content);
         },
 
         /**
          * Set user language
          */
-        language: function(language) {
+        language(language) {
           ga('set', 'language', language);
         },
 
         /**
          * Set document encoding
          */
-        encoding: function(encoding) {
+        encoding(encoding) {
           ga('set', 'encoding', encoding);
         },
 
         /**
          * Anonymize sender's IP address
          */
-        anonymizeIp: function(anonymizeIp) {
+        anonymizeIp(anonymizeIp) {
           ga('set', 'anonymizeIp', !!anonymizeIp);
-        }
+        },
       },
 
       /**
@@ -223,72 +224,72 @@ angular.module('Analytics.Service', [])
         /**
          * Register a pageview
          */
-        pageview: function(page) {
+        pageview(page) {
           ga('send', {
             hitType: 'pageview',
-            page: page || $location.url()
+            page: page || $location.url(),
           });
         },
 
         /**
          * Register a screenview
          */
-        screenview: function(screenName) {
+        screenview(screenName) {
           ga('send', {
             hitType: 'screenview',
-            screenName: screenName
+            screenName: screenName,
           });
         },
 
         /**
          * Register an event
          */
-        event: function(category, action, label, value) {
+        event(category, action, label, value) {
           ga('send', {
             hitType: 'event',
             eventCategory: category,
             eventAction: action,
             eventLabel: label,
-            eventValue: value
+            eventValue: value,
           });
         },
 
         /**
          * Register a social hit
          */
-        social: function(network, action, target) {
+        social(network, action, target) {
           ga('send', {
             hitType: 'social',
             socialNetwork: network,
             socialAction: action,
-            socialTarget: target
+            socialTarget: target,
           });
         },
 
         /**
          * Register an exception
          */
-        exception: function(description, isFatal) {
+        exception(description, isFatal) {
           ga('send', {
             hitType: 'exception',
             exDescription: description,
-            exFatal: !!isFatal
+            exFatal: !!isFatal,
           });
         },
 
         /**
          * Register a timing hit
          */
-        timing: function(category, variable, value, label) {
+        timing(category, variable, value, label) {
           ga('send', {
             hitType: 'timing',
             timingCategory: category,
             timingVar: variable,
             timingValue: value,
-            timingLabel: label
+            timingLabel: label,
           });
-        }
-      }
+        },
+      },
     };
 
     //Return
