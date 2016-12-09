@@ -4,7 +4,7 @@
 [![node dependencies](https://david-dm.org/meanie/angular-analytics.svg)](https://david-dm.org/meanie/angular-analytics)
 [![github issues](https://img.shields.io/github/issues/meanie/angular-analytics.svg)](https://github.com/meanie/angular-analytics/issues)
 [![codacy](https://img.shields.io/codacy/2850488ca36c476ab5ada9c155741202.svg)](https://www.codacy.com/app/meanie/angular-analytics)
-[![Join the chat at https://gitter.im/meanie/meanie](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg)](https://gitter.im/meanie/meanie?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 An Angular wrapper service for Google Analytics
 
