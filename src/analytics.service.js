@@ -84,6 +84,13 @@ angular.module('Analytics.Service', [])
       },
 
       /**
+       * Require interface
+       */
+      require(item) {
+        ga('require', item);
+      },
+
+      /**
        * Set interface
        */
       set: {
@@ -288,6 +295,44 @@ angular.module('Analytics.Service', [])
             timingValue: value,
             timingLabel: label,
           });
+        },
+      },
+
+      /**
+       * E-commerce interface
+       */
+      ecommerce: {
+
+        /**
+         * Add transaction
+         */
+        addTransaction(id, affiliation, revenue, shipping, tax, currency) {
+          ga('ecommerce:addTransaction', {
+            id, affiliation, revenue, shipping, tax, currency,
+          });
+        },
+
+        /**
+         * Add item
+         */
+        addItem(id, name, category, price, quantity, sku) {
+          ga('ecommerce:addItem', {
+            id, name, category, price, quantity, sku,
+          });
+        },
+
+        /**
+         * Send
+         */
+        send() {
+          ga('ecommerce:send');
+        },
+
+        /**
+         * Clear
+         */
+        clear() {
+          ga('ecommerce:clear');
         },
       },
     };
