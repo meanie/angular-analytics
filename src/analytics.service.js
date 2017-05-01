@@ -306,19 +306,15 @@ angular.module('Analytics.Service', [])
         /**
          * Add transaction
          */
-        addTransaction(id, affiliation, revenue, shipping, tax, currency) {
-          ga('ecommerce:addTransaction', {
-            id, affiliation, revenue, shipping, tax, currency,
-          });
+        addTransaction(data) {
+          ga('ecommerce:addTransaction', data);
         },
 
         /**
          * Add item
          */
-        addItem(id, name, category, price, quantity, sku) {
-          ga('ecommerce:addItem', {
-            id, name, category, price, quantity, sku,
-          });
+        addItem(data) {
+          ga('ecommerce:addItem', data);
         },
 
         /**
