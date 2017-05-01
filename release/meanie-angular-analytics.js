@@ -1,7 +1,7 @@
 /**
  * meanie-angular-analytics * https://github.com/meanie/angular-analytics
  *
- * Copyright (c) 2016 Adam Reis <adam@reis.nz>
+ * Copyright (c) 2017 Adam Reis <adam@reis.nz>
  * License: MIT
  */
 (function (window, angular, undefined) {
@@ -63,7 +63,6 @@
         /**
          * Enable analytics in realtime
          */
-
         enable: function enable() {
           _isEnabled = true;
         },
@@ -98,6 +97,14 @@
 
 
         /**
+         * Require interface
+         */
+        require: function require(item) {
+          ga('require', item);
+        },
+
+
+        /**
          * Set interface
          */
         set: {
@@ -105,7 +112,6 @@
           /**
            * Set app name
            */
-
           appName: function appName(name) {
             ga('set', 'appName', name);
           },
@@ -256,7 +262,6 @@
           /**
            * Register a pageview
            */
-
           pageview: function pageview(page) {
             ga('send', {
               hitType: 'pageview',
@@ -326,6 +331,47 @@
               timingValue: value,
               timingLabel: label
             });
+          }
+        },
+
+        /**
+         * E-commerce interface
+         */
+        ecommerce: {
+
+          /**
+           * Add transaction
+           */
+          addTransaction: function addTransaction(id, affiliation, revenue, shipping, tax, currency) {
+            ga('ecommerce:addTransaction', {
+              id: id, affiliation: affiliation, revenue: revenue, shipping: shipping, tax: tax, currency: currency
+            });
+          },
+
+
+          /**
+           * Add item
+           */
+          addItem: function addItem(id, name, category, price, quantity, sku) {
+            ga('ecommerce:addItem', {
+              id: id, name: name, category: category, price: price, quantity: quantity, sku: sku
+            });
+          },
+
+
+          /**
+           * Send
+           */
+          send: function send() {
+            ga('ecommerce:send');
+          },
+
+
+          /**
+           * Clear
+           */
+          clear: function clear() {
+            ga('ecommerce:clear');
           }
         }
       };
