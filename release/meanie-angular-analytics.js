@@ -342,20 +342,16 @@
           /**
            * Add transaction
            */
-          addTransaction: function addTransaction(id, affiliation, revenue, shipping, tax, currency) {
-            ga('ecommerce:addTransaction', {
-              id: id, affiliation: affiliation, revenue: revenue, shipping: shipping, tax: tax, currency: currency
-            });
+          addTransaction: function addTransaction(data) {
+            ga('ecommerce:addTransaction', data);
           },
 
 
           /**
            * Add item
            */
-          addItem: function addItem(id, name, category, price, quantity, sku) {
-            ga('ecommerce:addItem', {
-              id: id, name: name, category: category, price: price, quantity: quantity, sku: sku
-            });
+          addItem: function addItem(data) {
+            ga('ecommerce:addItem', data);
           },
 
 
