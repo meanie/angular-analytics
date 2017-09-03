@@ -1,6 +1,6 @@
-# meanie-angular-analytics
+# @meanie/angular-analytics
 
-[![npm version](https://img.shields.io/npm/v/meanie-angular-analytics.svg)](https://www.npmjs.com/package/meanie-angular-analytics)
+[![npm version](https://img.shields.io/npm/v/@meanie/angular-analytics.svg)](https://www.npmjs.com/package/@meanie/angular-analytics)
 [![node dependencies](https://david-dm.org/meanie/angular-analytics.svg)](https://david-dm.org/meanie/angular-analytics)
 [![github issues](https://img.shields.io/github/issues/meanie/angular-analytics.svg)](https://github.com/meanie/angular-analytics/issues)
 [![codacy](https://img.shields.io/codacy/2850488ca36c476ab5ada9c155741202.svg)](https://www.codacy.com/app/meanie/angular-analytics)
@@ -12,16 +12,20 @@ An Angular wrapper service for Google Analytics
 
 ## Installation
 
-You can install this package using `npm`:
+You can install this package using `yarn` or `npm`:
 
 ```shell
-npm install meanie-angular-analytics --save
+#yarn
+yarn add @meanie/angular-analytics
+
+#npm
+npm install @meanie/angular-analytics --save
 ```
 
-Include the script `node_modules/meanie-angular-analytics/release/meanie-angular-analytics.js` in your build process, or add it via a `<script>` tag to your `index.html`:
+Include the script `node_modules/@meanie/angular-analytics/release/angular-analytics.js` in your build process, or add it via a `<script>` tag to your `index.html`:
 
 ```html
-<script src="node_modules/meanie-angular-analytics/release/meanie-angular-analytics.js"></script>
+<script src="node_modules/@meanie/angular-analytics/release/angular-analytics.js"></script>
 ```
 
 Add `Analytics.Service` as a dependency for your app.
@@ -52,7 +56,7 @@ angular.module('App', [
 
 ## Issues & feature requests
 
-Please report any bugs, issues, suggestions and feature requests in the [meanie-angular-analytics issue tracker](https://github.com/meanie/angular-analytics/issues).
+Please report any bugs, issues, suggestions and feature requests in the [@meanie/angular-analytics issue tracker](https://github.com/meanie/angular-analytics/issues).
 
 ## Contributing
 
@@ -66,4 +70,4 @@ Pull requests are welcome! If you would like to contribute to Meanie, please che
 
 (MIT License)
 
-Copyright 2016-2017, [Adam Reis](http://adam.reis.nz)
+Copyright 2016-2017, [Adam Reis](https://adam.reis.nz)

@@ -1,2 +1,2 @@
-require('./release/meanie-angular-analytics.js');
+require('./release/angular-analytics.js');
 module.exports = 'Analytics.Service';
