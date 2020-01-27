@@ -1,5 +1,5 @@
 /**
- * meanie-angular-analytics * https://github.com/meanie/angular-analytics
+ * @meanie/angular-analytics * https://github.com/meanie/angular-analytics
  *
  * Copyright (c) 2017 Adam Reis <adam@reis.nz>
  * License: MIT
